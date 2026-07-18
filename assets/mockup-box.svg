@@ -1,0 +1,24 @@
+<svg width="380" height="500" viewBox="0 0 380 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pack" x1="40" y1="40" x2="330" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172941"/>
+      <stop offset="1" stop-color="#0B1424"/>
+    </linearGradient>
+    <linearGradient id="stripe" x1="72" y1="76" x2="296" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD36F"/>
+      <stop offset="1" stop-color="#FF7A86"/>
+    </linearGradient>
+  </defs>
+  <rect x="46" y="36" width="288" height="424" rx="20" fill="url(#pack)"/>
+  <rect x="72" y="72" width="236" height="340" rx="14" fill="#0E1E34" stroke="#426089" stroke-opacity="0.5"/>
+  <rect x="88" y="88" width="204" height="16" rx="8" fill="url(#stripe)"/>
+  <path d="M100 340C133 286 174 255 242 230" stroke="#00E5A8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="116" cy="346" r="10" fill="#00E5A8"/>
+  <circle cx="242" cy="230" r="10" fill="#FF5F6D"/>
+  <text x="96" y="160" fill="#EDF2FF" font-family="Arial, sans-serif" font-size="34" font-weight="700">GAME</text>
+  <text x="96" y="198" fill="#EDF2FF" font-family="Arial, sans-serif" font-size="34" font-weight="700">FIGURE</text>
+  <text x="96" y="235" fill="#89A0C6" font-family="Arial, sans-serif" font-size="17">PLUG AND PLAY EDITION</text>
+  <rect x="96" y="388" width="188" height="24" rx="12" fill="#1D3252"/>
+  <text x="118" y="405" fill="#B9C8E3" font-family="Arial, sans-serif" font-size="12">INCLUDES FULL DIGITAL GAME</text>
+  <rect x="46" y="36" width="288" height="424" rx="20" stroke="#B8C7E6" stroke-opacity="0.25" stroke-width="3"/>
+</svg>
