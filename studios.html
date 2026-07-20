@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GameFigures — For game makers</title>
-<meta name="description" content="How a Relic works on the technical side: flash architecture, chip identity, signed updates. For indie studios and publishers.">
+<title>GameFigures — Per chi fa videogiochi</title>
+<meta name="description" content="Come funziona un Relic dal lato tecnico: architettura flash, identità del chip, aggiornamenti firmati. Per studi indie e publisher.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,54 +25,55 @@
     <a href="index.html" class="brand">Game<span>Figures</span></a>
     <div class="nav-links">
       <a href="index.html#relic">Relic</a>
-      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#come-funziona">Come funziona</a>
       <a href="index.html#app">App</a>
       <a href="studios.html" class="active">Studios</a>
     </div>
     <div class="nav-tools">
-      <button class="icon-btn" type="button" id="theme-toggle" aria-label="Toggle theme">
+      <a href="ads-copy.html" class="text-link">Kit annunci</a>
+      <button class="icon-btn" type="button" id="theme-toggle" aria-label="Cambia tema">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
-      <a href="it/studios.html" class="lang-btn" aria-label="Passa a italiano">IT</a>
-      <a href="index.html#founder" class="nav-cta">Ask for information</a>
+      <a href="en/studios.html" class="lang-btn" aria-label="Switch to English">EN</a>
+      <a href="index.html#founder" class="nav-cta">Chiedi informazioni</a>
     </div>
   </div>
 </nav>
 
 <header class="top">
   <div class="wrap-narrow">
-    <span class="tag">For game makers</span>
-    <h1>Ship your game as a physical object.</h1>
-    <p>Relic is an open format for taking a video game outside digital stores without giving up updates, DLC, and content control. This page explains how it works inside.</p>
+    <span class="tag">Per chi fa videogiochi</span>
+    <h1>Distribuisci il tuo gioco come oggetto fisico.</h1>
+    <p>Relic è un formato aperto per portare un videogioco fuori dagli store digitali senza rinunciare ad aggiornamenti, DLC e controllo dei contenuti. Questa pagina spiega come funziona dentro.</p>
   </div>
 </header>
 
 <section class="compact">
   <div class="wrap-narrow">
-    <div class="eyebrow">Flash architecture</div>
-    <h2>Three partitions, three roles.</h2>
-    <p>The memory embedded in the statue's base is split into three independent spaces. Each has write rules, encryption, and access consistent with what it holds.</p>
+    <div class="eyebrow">Architettura flash</div>
+    <h2>Tre partizioni, tre ruoli.</h2>
+    <p>La memoria integrata nella base della statua è divisa in tre spazi indipendenti. Ognuno ha regole di scrittura, cifratura e accesso coerenti con quello che contiene.</p>
     <div class="parts">
       <div class="part">
-        <div class="label core-c">Core<small>Partition 01</small></div>
+        <div class="label core-c">Core<small>Partizione 01</small></div>
         <div class="body">
-          <p>The game files. Read-only via hardware write-protect. Always visible, always copyable. Encryption for the launcher is optional; ownership never is. The user can archive, copy, or run the files without going through us.</p>
+          <p>I file del gioco. Read-only via write-protect hardware. Sempre visibili, sempre copiabili. La cifratura per il launcher è opzionale, il possesso mai. L'utente può archiviare, copiare o eseguire i file senza passare da noi.</p>
           <div class="tags"><span>read-only</span><span>hw-protected</span><span>archivable</span></div>
         </div>
       </div>
       <div class="part">
-        <div class="label flux-c">Flux<small>Partition 02</small></div>
+        <div class="label flux-c">Flux<small>Partizione 02</small></div>
         <div class="body">
-          <p>Hosts <code>Ember</code>, the embedded app. Optional autorun, zero installation. If the system already has the companion app <code>Forge</code> installed, Ember delegates and exits — no duplication.</p>
+          <p>Ospita <code>Ember</code>, l'app embedded. Autorun opzionale, zero installazione. Se il sistema ha già l'app companion <code>Forge</code> installata, Ember delega e termina — nessuna duplicazione.</p>
           <div class="tags"><span>autorun</span><span>zero-install</span><span>portable</span></div>
         </div>
       </div>
       <div class="part">
-        <div class="label drift-c">Drift<small>Partition 03</small></div>
+        <div class="label drift-c">Drift<small>Partizione 03</small></div>
         <div class="body">
-          <p>DLC, patches, extra content. Writable only by authenticated apps. Every update is signed server-side, applied locally. The studio keeps full control over what lands on the chip.</p>
-          <div class="tags"><span>signed</span><span>writable</span><span>versioned</span></div>
+          <p>DLC, patch, contenuti extra. Scrivibile solo da app autenticate. Ogni update è firmato server-side, applicato in locale. Lo studio mantiene pieno controllo su cosa arriva sul chip.</p>
+          <div class="tags"><span>firmata</span><span>scrivibile</span><span>versionata</span></div>
         </div>
       </div>
     </div>
@@ -81,26 +82,26 @@
 
 <section class="compact">
   <div class="wrap-narrow">
-    <div class="eyebrow">Identity and license</div>
-    <h2>The chip is the license.</h2>
-    <p>Every memory has a unique serial number. The access key for encrypted content is derived locally from the UID via HKDF. No account, no connection required on first boot, no validation server.</p>
-    <p>The physical Relic is the sole license title. Move it, and the license moves with it. Lose it, and you lose it. It's deliberately symmetric with the physical objects everyone already understands.</p>
+    <div class="eyebrow">Identità e licenza</div>
+    <h2>Il chip è la licenza.</h2>
+    <p>Ogni memoria ha un serial number univoco. La chiave di accesso ai contenuti cifrati viene derivata localmente dall'UID via HKDF. Nessun account, nessuna connessione richiesta al primo avvio, nessun server di validazione.</p>
+    <p>Il Relic fisico è l'unico titolo di licenza. Se lo sposti, la licenza si sposta con lui. Se lo perdi, la perdi. È volutamente simmetrico rispetto agli oggetti fisici che tutti conoscono già.</p>
     <div class="facts">
       <div class="fact">
-        <h3>Local derivation</h3>
-        <p>HKDF from the chip UID. No server communication needed to play.</p>
+        <h3>Derivazione locale</h3>
+        <p>HKDF dall'UID del chip. Nessuna comunicazione con server per giocare.</p>
       </div>
       <div class="fact">
         <h3>Zero account</h3>
-        <p>No signup, no login. The statue is your access token.</p>
+        <p>Nessun signup, nessun login. La statua è il tuo titolo di accesso.</p>
       </div>
       <div class="fact">
         <h3>Offline-first</h3>
-        <p>The game boots without a network. Network is only used for DLC and updates.</p>
+        <p>Il gioco parte senza rete. Rete serve solo per DLC e aggiornamenti.</p>
       </div>
       <div class="fact">
-        <h3>Preservation</h3>
-        <p>Even without us, Core files remain accessible to the user.</p>
+        <h3>Preservazione</h3>
+        <p>Anche senza di noi, i file di Core restano accessibili all'utente.</p>
       </div>
     </div>
   </div>
@@ -108,18 +109,18 @@
 
 <section class="compact">
   <div class="wrap-narrow">
-    <div class="eyebrow">Distribution</div>
-    <h2>Limited runs, curated, physical.</h2>
-    <p>We produce in house: modelling, SLA printing, manual post-processing. Every piece is numbered. The target is indie studios who want an unconventional physical edition of their game — sold as a collectible, not as a substitute for the digital channel.</p>
-    <p>We handle statue design, production, packaging, and software integration. The studio provides the game and defines the theme. Print runs and royalties are agreed title by title.</p>
+    <div class="eyebrow">Distribuzione</div>
+    <h2>Tirature limitate, curate, fisiche.</h2>
+    <p>Produciamo internamente: modellazione, stampa SLA, post-processing manuale. Ogni pezzo è numerato. Il target sono studi indie che vogliono un'edizione fisica non convenzionale del proprio gioco — da vendere come oggetto da collezione, non come sostituto del canale digitale.</p>
+    <p>Ci occupiamo noi di design della statuetta, produzione, packaging e integrazione software. Lo studio fornisce il gioco e definisce il tema. Tirature e royalty si concordano titolo per titolo.</p>
   </div>
 </section>
 
 <section class="final compact">
   <div class="wrap-narrow">
-    <div class="eyebrow">Let's talk</div>
-    <h2>Want to see your game inside a Relic?</h2>
-    <p>Write to us. We'll show you a prototype, the numbers, and how it would work with your title.</p>
+    <div class="eyebrow">Parliamone</div>
+    <h2>Vuoi vedere il tuo gioco dentro un Relic?</h2>
+    <p>Scrivici. Ti mostriamo un prototipo, i numeri, e come funzionerebbe con il tuo titolo.</p>
     <a href="mailto:hello@gamefigures.tech" class="btn btn-primary">hello@gamefigures.tech</a>
   </div>
 </section>

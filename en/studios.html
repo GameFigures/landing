@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GameFigures — For game makers</title>
+<meta name="description" content="How a Relic works on the technical side: flash architecture, chip identity, signed updates. For indie studios and publishers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('gf-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap-narrow">
+    <a href="index.html" class="brand">Game<span>Figures</span></a>
+    <div class="nav-links">
+      <a href="index.html#relic">Relic</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#app">App</a>
+      <a href="studios.html" class="active">Studios</a>
+    </div>
+    <div class="nav-tools">
+      <button class="icon-btn" type="button" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a href="../studios.html" class="lang-btn" aria-label="Passa a italiano">IT</a>
+      <a href="index.html#founder" class="nav-cta">Ask for information</a>
+    </div>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap-narrow">
+    <span class="tag">For game makers</span>
+    <h1>Ship your game as a physical object.</h1>
+    <p>Relic is an open format for taking a video game outside digital stores without giving up updates, DLC, and content control. This page explains how it works inside.</p>
+  </div>
+</header>
+
+<section class="compact">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Flash architecture</div>
+    <h2>Three partitions, three roles.</h2>
+    <p>The memory embedded in the statue's base is split into three independent spaces. Each has write rules, encryption, and access consistent with what it holds.</p>
+    <div class="parts">
+      <div class="part">
+        <div class="label core-c">Core<small>Partition 01</small></div>
+        <div class="body">
+          <p>The game files. Read-only via hardware write-protect. Always visible, always copyable. Encryption for the launcher is optional; ownership never is. The user can archive, copy, or run the files without going through us.</p>
+          <div class="tags"><span>read-only</span><span>hw-protected</span><span>archivable</span></div>
+        </div>
+      </div>
+      <div class="part">
+        <div class="label flux-c">Flux<small>Partition 02</small></div>
+        <div class="body">
+          <p>Hosts <code>Ember</code>, the embedded app. Optional autorun, zero installation. If the system already has the companion app <code>Forge</code> installed, Ember delegates and exits — no duplication.</p>
+          <div class="tags"><span>autorun</span><span>zero-install</span><span>portable</span></div>
+        </div>
+      </div>
+      <div class="part">
+        <div class="label drift-c">Drift<small>Partition 03</small></div>
+        <div class="body">
+          <p>DLC, patches, extra content. Writable only by authenticated apps. Every update is signed server-side, applied locally. The studio keeps full control over what lands on the chip.</p>
+          <div class="tags"><span>signed</span><span>writable</span><span>versioned</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compact">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Identity and license</div>
+    <h2>The chip is the license.</h2>
+    <p>Every memory has a unique serial number. The access key for encrypted content is derived locally from the UID via HKDF. No account, no connection required on first boot, no validation server.</p>
+    <p>The physical Relic is the sole license title. Move it, and the license moves with it. Lose it, and you lose it. It's deliberately symmetric with the physical objects everyone already understands.</p>
+    <div class="facts">
+      <div class="fact">
+        <h3>Local derivation</h3>
+        <p>HKDF from the chip UID. No server communication needed to play.</p>
+      </div>
+      <div class="fact">
+        <h3>Zero account</h3>
+        <p>No signup, no login. The statue is your access token.</p>
+      </div>
+      <div class="fact">
+        <h3>Offline-first</h3>
+        <p>The game boots without a network. Network is only used for DLC and updates.</p>
+      </div>
+      <div class="fact">
+        <h3>Preservation</h3>
+        <p>Even without us, Core files remain accessible to the user.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compact">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Distribution</div>
+    <h2>Limited runs, curated, physical.</h2>
+    <p>We produce in house: modelling, SLA printing, manual post-processing. Every piece is numbered. The target is indie studios who want an unconventional physical edition of their game — sold as a collectible, not as a substitute for the digital channel.</p>
+    <p>We handle statue design, production, packaging, and software integration. The studio provides the game and defines the theme. Print runs and royalties are agreed title by title.</p>
+  </div>
+</section>
+
+<section class="final compact">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Let's talk</div>
+    <h2>Want to see your game inside a Relic?</h2>
+    <p>Write to us. We'll show you a prototype, the numbers, and how it would work with your title.</p>
+    <a href="mailto:hello@gamefigures.tech" class="btn btn-primary">hello@gamefigures.tech</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap-narrow">
+    <div>© 2026 GameFigures · Made in Italy</div>
+    <div><a href="index.html">Home</a></div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('gf-theme', next); } catch (e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>
