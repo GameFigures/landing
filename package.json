@@ -1,0 +1,22 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GameFigures/landing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GameFigures/landing/issues"
+  },
+  "homepage": "https://github.com/GameFigures/landing#readme",
+  "description": "",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}
