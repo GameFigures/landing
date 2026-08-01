@@ -64,7 +64,7 @@
       <div class="part">
         <div class="label flux-c">Flux<small>Partizione 02</small></div>
         <div class="body">
-          <p>Ospita <code>Ember</code>, l'app embedded. Autorun opzionale, zero installazione. Se il sistema ha già l'app companion <code>Forge</code> installata, Ember delega e termina — nessuna duplicazione.</p>
+          <p>Ospita <code>Ember</code>, l'app embedded. Autorun opzionale, zero installazione. Se il sistema ha già l'app companion <code>Forge</code> installata, Ember delega e termina. Nessuna duplicazione.</p>
           <div class="tags"><span>autorun</span><span>zero-install</span><span>portable</span></div>
         </div>
       </div>
@@ -81,14 +81,14 @@
 
 <section class="compact">
   <div class="wrap-narrow">
-    <div class="eyebrow">Identità e licenza</div>
-    <h2>Il chip è la licenza.</h2>
-    <p>Ogni memoria ha un serial number univoco. La chiave di accesso ai contenuti cifrati viene derivata localmente dall'UID via HKDF. Nessun account, nessuna connessione richiesta al primo avvio, nessun server di validazione.</p>
-    <p>Il Relic fisico è l'unico titolo di licenza. Se lo sposti, la licenza si sposta con lui. Se lo perdi, la perdi. È volutamente simmetrico rispetto agli oggetti fisici che tutti conoscono già.</p>
+    <div class="eyebrow">Possesso</div>
+    <h2>Non c'è nessuna licenza.</h2>
+    <p>Compri un Relic ed è tuo. Nessun termine da accettare, nessun account da creare, nessun server che può revocarti l'accesso. Il gioco è sul dispositivo: portalo, prestalo, vendilo.</p>
+    <p>Se lo perdi, lo perdi. È il compromesso. Voluto. Funziona come funziona un libro.</p>
     <div class="facts">
       <div class="fact">
-        <h3>Derivazione locale</h3>
-        <p>HKDF dall'UID del chip. Nessuna comunicazione con server per giocare.</p>
+        <h3>Sul dispositivo</h3>
+        <p>Il gioco vive sul Relic. Nessuna voce in un database, nessun account cloud, è fisicamente con te.</p>
       </div>
       <div class="fact">
         <h3>Zero account</h3>
@@ -96,11 +96,11 @@
       </div>
       <div class="fact">
         <h3>Offline-first</h3>
-        <p>Il gioco parte senza rete. Rete serve solo per DLC e aggiornamenti.</p>
+        <p>Il gioco parte senza rete. La rete serve solo per DLC e aggiornamenti.</p>
       </div>
       <div class="fact">
         <h3>Preservazione</h3>
-        <p>Anche senza di noi, i file di Core restano accessibili all'utente.</p>
+        <p>Anche senza di noi, i file restano accessibili all'utente.</p>
       </div>
     </div>
   </div>
@@ -110,8 +110,54 @@
   <div class="wrap-narrow">
     <div class="eyebrow">Distribuzione</div>
     <h2>Tirature limitate, curate, fisiche.</h2>
-    <p>Produciamo internamente: modellazione, stampa SLA, post-processing manuale. Ogni pezzo è numerato. Il target sono studi indie che vogliono un'edizione fisica non convenzionale del proprio gioco — da vendere come oggetto da collezione, non come sostituto del canale digitale.</p>
+    <p>Produciamo internamente: modellazione, stampa SLA, post-processing manuale. Ogni pezzo è numerato. Il target sono studi indie che vogliono un'edizione fisica non convenzionale del proprio gioco, da vendere come oggetto da collezione, non come sostituto del canale digitale.</p>
     <p>Ci occupiamo noi di design della statuetta, produzione, packaging e integrazione software. Lo studio fornisce il gioco e definisce il tema. Tirature e royalty si concordano titolo per titolo.</p>
+  </div>
+</section>
+
+<section class="compact">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Requisiti tecnici</div>
+    <h2>Cosa serve per girare dentro un Relic.</h2>
+    <p>Il launcher gestisce l'avvio e le path. Il gioco deve essere portabile e autosufficiente: nessuna traccia sul sistema dell'utente.</p>
+    <div class="parts">
+      <div class="part">
+        <div class="label core-c">Piattaforma<small>Build target</small></div>
+        <div class="body">
+          <p><strong>Windows</strong> è la piattaforma attuale. Il gioco deve essere completamente portabile: nessun installer, nessuna scrittura in <code>%APPDATA%</code> o nel registro di sistema. Ogni file deve risiedere nella propria directory di esecuzione.</p>
+          <p>Supporto <strong>Linux</strong> e <strong>macOS</strong> è in sviluppo.</p>
+          <div class="tags"><span>windows</span><span>linux (coming)</span><span>macos (coming)</span><span>no-installer</span><span>no-registry</span></div>
+        </div>
+      </div>
+      <div class="part">
+        <div class="label flux-c">Integrazione<small>Launcher API</small></div>
+        <div class="body">
+          <p>Il launcher avvia il gioco passando due variabili d'ambiente: <code>GAMEFIGURES_FLUX_PATH</code> indica la partizione Flux, <code>GAMEFIGURES_DRIFT_PATH</code> la partizione Drift. I salvataggi devono essere scritti in Flux, non in <code>%APPDATA%</code>, così da restare sulla chiavetta insieme al gioco.</p>
+          <div class="tags"><span>GAMEFIGURES_FLUX_PATH</span><span>GAMEFIGURES_DRIFT_PATH</span><span>saves on chip</span></div>
+        </div>
+      </div>
+      <div class="part">
+        <div class="label drift-c">File richiesti<small>Manifest</small></div>
+        <div class="body">
+          <p>Un file <code>manifest.json</code> nella root con i metadati del titolo: <code>game_id</code>, <code>title</code>, <code>version</code>, <code>executable</code>, <code>cover_image</code>, <code>developer</code> e la lista <code>drift_content</code>. Più l'eseguibile standalone. La cover image è opzionale.</p>
+          <div class="tags"><span>manifest.json</span><span>standalone executable</span><span>cover opzionale</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="facts" style="margin-top: 40px;">
+      <div class="fact">
+        <h3>Offline-first</h3>
+        <p>Nessuna connessione internet richiesta all'avvio. Internet serve solo per aggiornamenti e DLC opzionali.</p>
+      </div>
+      <div class="fact">
+        <h3>SDK e game engines</h3>
+        <p>SDK TypeScript disponibile subito. Supporto nativo per i principali engine (Unity, Godot e Unreal Engine) in arrivo.</p>
+      </div>
+      <div class="fact">
+        <h3>Consegna semplice</h3>
+        <p>Un archivio con <code>manifest.json</code>, l'eseguibile e la cover opzionale. Nessun installer da configurare, nessun packaging tool proprietario.</p>
+      </div>
+    </div>
   </div>
 </section>
 

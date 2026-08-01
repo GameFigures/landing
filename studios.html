@@ -64,7 +64,7 @@
       <div class="part">
         <div class="label flux-c">Flux<small>Partition 02</small></div>
         <div class="body">
-          <p>Hosts <code>Ember</code>, the embedded app. Optional autorun, zero installation. If the system already has the companion app <code>Forge</code> installed, Ember delegates and exits — no duplication.</p>
+          <p>Hosts <code>Ember</code>, the embedded app. Optional autorun, zero installation. If the system already has the companion app <code>Forge</code> installed, Ember delegates and exits. No duplication.</p>
           <div class="tags"><span>autorun</span><span>zero-install</span><span>portable</span></div>
         </div>
       </div>
@@ -81,14 +81,14 @@
 
 <section class="compact">
   <div class="wrap-narrow">
-    <div class="eyebrow">Identity and license</div>
-    <h2>The chip is the license.</h2>
-    <p>Every memory has a unique serial number. The access key for encrypted content is derived locally from the UID via HKDF. No account, no connection required on first boot, no validation server.</p>
-    <p>The physical Relic is the sole license title. Move it, and the license moves with it. Lose it, and you lose it. It's deliberately symmetric with the physical objects everyone already understands.</p>
+    <div class="eyebrow">Ownership</div>
+    <h2>There is no license.</h2>
+    <p>You buy a Relic and it's yours. No terms to accept, no account to create, no server that can revoke access. The game is on the device: take it, lend it, sell it.</p>
+    <p>Lose it, and you lose it. That's the trade-off, and it's deliberate. It works the same way a book works.</p>
     <div class="facts">
       <div class="fact">
-        <h3>Local derivation</h3>
-        <p>HKDF from the chip UID. No server communication needed to play.</p>
+        <h3>On the device</h3>
+        <p>The game lives on the Relic. No database entry, no cloud account. It's physically with you.</p>
       </div>
       <div class="fact">
         <h3>Zero account</h3>
@@ -96,11 +96,11 @@
       </div>
       <div class="fact">
         <h3>Offline-first</h3>
-        <p>The game boots without a network. Network is only used for DLC and updates.</p>
+        <p>The game boots without a network. The network is only used for DLC and updates.</p>
       </div>
       <div class="fact">
-        <h3>Preservazione</h3>
-        <p>Even without us, Core files remain accessible to the user.</p>
+        <h3>Preservation</h3>
+        <p>Even without us, the files remain accessible to the user.</p>
       </div>
     </div>
   </div>
@@ -110,8 +110,54 @@
   <div class="wrap-narrow">
     <div class="eyebrow">Distribution</div>
     <h2>Limited runs, curated, physical.</h2>
-    <p>We produce in house: modelling, SLA printing, manual post-processing. Every piece is numbered. The target is indie studios who want an unconventional physical edition of their game — sold as a collectible, not as a substitute for the digital channel.</p>
+    <p>We produce in house: modelling, SLA printing, manual post-processing. Every piece is numbered. The target is indie studios who want an unconventional physical edition of their game, sold as a collectible, not as a substitute for the digital channel.</p>
     <p>We handle statue design, production, packaging, and software integration. The studio provides the game and defines the theme. Print runs and royalties are agreed title by title.</p>
+  </div>
+</section>
+
+<section class="compact">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Technical requirements</div>
+    <h2>What it takes to run inside a Relic.</h2>
+    <p>The launcher handles boot and path routing. The game must be portable and self-contained: no trace left on the user's system.</p>
+    <div class="parts">
+      <div class="part">
+        <div class="label core-c">Platform<small>Build target</small></div>
+        <div class="body">
+          <p><strong>Windows</strong> is the current platform. The game must be fully portable: no installer, no writes to <code>%APPDATA%</code> or the Windows registry. Every file must live inside its own execution directory.</p>
+          <p><strong>Linux</strong> and <strong>macOS</strong> support is in development.</p>
+          <div class="tags"><span>windows</span><span>linux (coming)</span><span>macos (coming)</span><span>no-installer</span><span>no-registry</span></div>
+        </div>
+      </div>
+      <div class="part">
+        <div class="label flux-c">Integration<small>Launcher API</small></div>
+        <div class="body">
+          <p>The launcher starts the game passing two environment variables: <code>GAMEFIGURES_FLUX_PATH</code> points to the Flux partition, <code>GAMEFIGURES_DRIFT_PATH</code> to the Drift partition. Save files must be written to Flux, not <code>%APPDATA%</code>, so they stay on the device alongside the game.</p>
+          <div class="tags"><span>GAMEFIGURES_FLUX_PATH</span><span>GAMEFIGURES_DRIFT_PATH</span><span>saves on chip</span></div>
+        </div>
+      </div>
+      <div class="part">
+        <div class="label drift-c">Required files<small>Manifest</small></div>
+        <div class="body">
+          <p>A <code>manifest.json</code> at the game root with title metadata: <code>game_id</code>, <code>title</code>, <code>version</code>, <code>executable</code>, <code>cover_image</code>, <code>developer</code>, and the <code>drift_content</code> list. Plus a standalone executable. Cover image is optional.</p>
+          <div class="tags"><span>manifest.json</span><span>standalone executable</span><span>cover optional</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="facts" style="margin-top: 40px;">
+      <div class="fact">
+        <h3>Offline-first</h3>
+        <p>No internet connection required at launch. Network is only needed for optional updates and DLC.</p>
+      </div>
+      <div class="fact">
+        <h3>SDK &amp; game engines</h3>
+        <p>TypeScript SDK available now. Native support for the major game engines (Unity, Godot, and Unreal Engine) coming soon.</p>
+      </div>
+      <div class="fact">
+        <h3>Simple delivery</h3>
+        <p>One archive with <code>manifest.json</code>, the executable, and an optional cover. No installer to configure, no proprietary packaging tool.</p>
+      </div>
+    </div>
   </div>
 </section>
 
