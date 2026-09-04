@@ -73,7 +73,7 @@
     <div class="hero-inner">
       <span class="file-no">Founder series &middot; Individually numbered</span>
       <h1>The action figure that boots a full game<em>,</em> and you actually own it.</h1>
-      <p class="lede">Relic is a physical edition for people who want more than a digital license: a numbered resin statue, hand-finished, with the complete game sealed into its base. Plug in via USB and play in seconds. No install, no account, no DRM &mdash; nobody can take it away.</p>
+      <p class="lede">Relic is a physical edition for people who want more than a digital license: a numbered resin statue, hand-finished, with the complete game sealed into its base. Plug in via USB and play in seconds. No install, no account, no DRM. Nobody can take it away.</p>
       <div class="cta-row">
         <a href="#how-it-works" class="btn btn-primary">How it works</a>
         <a href="studios.html" class="btn btn-ghost">For studios</a>
@@ -119,42 +119,40 @@
 
 <section id="relic">
   <div class="wrap">
-    <div class="what-grid">
-      <div>
-        <div class="eyebrow">What Relic is</div>
-        <h2>A statue. A memory. A whole game.</h2>
-        <p class="what-lede">SLA-printed resin, ten centimetres, themed to the title it holds and finished by hand. Hand-finished pieces mean small run-to-run variation is normal, not a flaw. In its base, a USB flash memory with the entire game. Plug it in and play.</p>
-        <div class="what-list">
-          <div class="item">
-            <div class="tick"></div>
-            <div>
-              <h3>No installation required</h3>
-              <p>The app boots from the statue itself. Prefer to copy everything to disk? The files are right there, in the clear.</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="tick"></div>
-            <div>
-              <h3>The game is yours</h3>
-              <p>No account, no server, nothing between you and what you bought. Sell it, lend it, keep it forever.</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="tick"></div>
-            <div>
-              <h3>Real preservation</h3>
-              <p>Game files stay visible and copyable. No walled store, no middleman deciding what survives.</p>
-            </div>
+  <div class="what-grid">
+    <div class="what-copy">
+      <div class="eyebrow">What Relic is</div>
+      <h2>A statue. A memory. A whole game.</h2>
+      <p class="what-lede">SLA-printed resin, ten centimetres, themed to the title it holds and finished by hand. Hand-finished pieces mean small run-to-run variation is normal, not a flaw. In its base, a USB flash memory with the entire game. Plug it in and play.</p>
+      <div class="what-list">
+        <div class="item">
+          <div class="tick"></div>
+          <div>
+            <h3>No installation required</h3>
+            <p>The app boots from the statue itself. Prefer to copy everything to disk? The files are right there, in the clear.</p>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="what-visual">
-          <img src="assets/statue.png" alt="The Relic statue, an SLA-printed resin figure with a USB flash memory base" loading="lazy">
+        <div class="item">
+          <div class="tick"></div>
+          <div>
+            <h3>The game is yours</h3>
+            <p>No account, no server, nothing between you and what you bought. Sell it, lend it, keep it forever.</p>
+          </div>
         </div>
-        <p class="img-caption">Placeholder render &mdash; specimen photography of the real prototype pending.</p>
+        <div class="item">
+          <div class="tick"></div>
+          <div>
+            <h3>Real preservation</h3>
+            <p>Game files stay visible and copyable. No walled store, no middleman deciding what survives.</p>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="what-visual">
+      <img src="assets/statue.png" alt="The Relic statue, an SLA-printed resin figure with a USB flash memory base" loading="lazy">
+      <p class="img-caption">AI-generated placeholder: specimen photography pending</p>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -255,6 +253,30 @@
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       try { localStorage.setItem('gf-theme', next); } catch (e) {}
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var hero = document.querySelector('.hero');
+    var mark = document.querySelector('.hero-watermark');
+    if (!hero || !mark) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    var raf = null;
+    hero.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        mark.style.transform = 'rotate(9deg) translate(' + (x * -22) + 'px,' + (y * -16) + 'px)';
+      });
+    });
+    hero.addEventListener('mouseleave', function () {
+      if (raf) cancelAnimationFrame(raf);
+      mark.style.transform = 'rotate(9deg)';
     });
   })();
 </script>

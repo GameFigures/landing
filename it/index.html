@@ -73,7 +73,7 @@
     <div class="hero-inner">
       <span class="file-no">Edizione fondatori &middot; Numerata singolarmente</span>
       <h1>L'action figure che avvia un gioco completo<em>,</em> e che possiedi davvero.</h1>
-      <p class="lede">Relic è un'edizione fisica per chi vuole più di una licenza digitale: una statuetta in resina numerata, rifinita a mano, con il gioco completo sigillato nella base. Collega via USB e giochi in pochi secondi. Nessuna installazione, nessun account, nessun DRM &mdash; nessuno può portartelo via.</p>
+      <p class="lede">Relic è un'edizione fisica per chi vuole più di una licenza digitale: una statuetta in resina numerata, rifinita a mano, con il gioco completo sigillato nella base. Collega via USB e giochi in pochi secondi. Nessuna installazione, nessun account, nessun DRM. Nessuno può portartelo via.</p>
       <div class="cta-row">
         <a href="#come-funziona" class="btn btn-primary">Come funziona</a>
         <a href="studios.html" class="btn btn-ghost">Per studi</a>
@@ -119,42 +119,40 @@
 
 <section id="relic">
   <div class="wrap">
-    <div class="what-grid">
-      <div>
-        <div class="eyebrow">Che cos'è Relic</div>
-        <h2>Una statua. Una memoria. Un gioco completo.</h2>
-        <p class="what-lede">Resina stampata SLA, dieci centimetri, tema legato al titolo che contiene, rifinita a mano. Pezzi rifiniti a mano comportano piccole variazioni da esemplare a esemplare: non è un difetto, è la norma. Nella base, una memoria flash USB con l'intero gioco. Collegala e giochi.</p>
-        <div class="what-list">
-          <div class="item">
-            <div class="tick"></div>
-            <div>
-              <h3>Nessuna installazione richiesta</h3>
-              <p>L'app parte dalla statua stessa. Se preferisci copiare tutto sul disco, i file sono lì, in chiaro.</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="tick"></div>
-            <div>
-              <h3>Il gioco è tuo</h3>
-              <p>Nessun account, nessun server, niente tra te e quello che hai comprato. Vendilo, prestalo, tienilo per sempre.</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="tick"></div>
-            <div>
-              <h3>Preservazione reale</h3>
-              <p>I file di gioco sono sempre visibili e copiabili. Nessuno store recintato, nessun intermediario a decidere cosa resta.</p>
-            </div>
+  <div class="what-grid">
+    <div class="what-copy">
+      <div class="eyebrow">Che cos'è Relic</div>
+      <h2>Una statua. Una memoria. Un gioco completo.</h2>
+      <p class="what-lede">Resina stampata SLA, dieci centimetri, tema legato al titolo che contiene, rifinita a mano. Pezzi rifiniti a mano comportano piccole variazioni da esemplare a esemplare: non è un difetto, è la norma. Nella base, una memoria flash USB con l'intero gioco. Collegala e giochi.</p>
+      <div class="what-list">
+        <div class="item">
+          <div class="tick"></div>
+          <div>
+            <h3>Nessuna installazione richiesta</h3>
+            <p>L'app parte dalla statua stessa. Se preferisci copiare tutto sul disco, i file sono lì, in chiaro.</p>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="what-visual">
-          <img src="../assets/statue.png" alt="La statua Relic, una statuetta in resina stampata SLA con una memoria flash USB nella base" loading="lazy">
+        <div class="item">
+          <div class="tick"></div>
+          <div>
+            <h3>Il gioco è tuo</h3>
+            <p>Nessun account, nessun server, niente tra te e quello che hai comprato. Vendilo, prestalo, tienilo per sempre.</p>
+          </div>
         </div>
-        <p class="img-caption">Render segnaposto &mdash; foto del reperto reale in arrivo.</p>
+        <div class="item">
+          <div class="tick"></div>
+          <div>
+            <h3>Preservazione reale</h3>
+            <p>I file di gioco sono sempre visibili e copiabili. Nessuno store recintato, nessun intermediario a decidere cosa resta.</p>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="what-visual">
+      <img src="../assets/statue.png" alt="La statua Relic, una statuetta in resina stampata SLA con una memoria flash USB nella base" loading="lazy">
+      <p class="img-caption">Render generato con IA: foto del reperto reale in arrivo</p>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -254,6 +252,30 @@
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       try { localStorage.setItem('gf-theme', next); } catch (e) {}
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var hero = document.querySelector('.hero');
+    var mark = document.querySelector('.hero-watermark');
+    if (!hero || !mark) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    var raf = null;
+    hero.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        mark.style.transform = 'rotate(9deg) translate(' + (x * -22) + 'px,' + (y * -16) + 'px)';
+      });
+    });
+    hero.addEventListener('mouseleave', function () {
+      if (raf) cancelAnimationFrame(raf);
+      mark.style.transform = 'rotate(9deg)';
     });
   })();
 </script>
