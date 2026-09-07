@@ -120,6 +120,15 @@ nav.site-nav {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
+/* iOS can fail to extend backdrop-filter into the notch strip even once padding
+   clears it, so paint that sliver with a plain (non-blurred) fill as a backstop. */
+nav.site-nav::before {
+  content: "";
+  position: fixed; top: 0; left: 0; right: 0;
+  height: env(safe-area-inset-top);
+  background: var(--nav-bg);
+  z-index: 1;
+}
 nav.site-nav .wrap, nav.site-nav .wrap-narrow { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
 .brand {
   display: inline-flex; align-items: center; gap: 9px;
@@ -215,7 +224,8 @@ section:nth-of-type(even) .quote-panel { background: var(--paper); }
 
 /* ================= boot splash (plays once per session) ================= */
 .boot-splash {
-  position: fixed; inset: 0; z-index: 999;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999;
+  height: 100vh; height: 100dvh;
   background: var(--paper);
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;
   cursor: pointer;
