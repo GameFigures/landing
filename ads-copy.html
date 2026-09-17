@@ -7,143 +7,50 @@
 <meta name="description" content="Commercial ad copy kit for Meta Ads and social campaigns: hooks, primary text, headlines, and CTAs for Relic by GameFigures.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <style>
   :root {
-    --bg: #0a0a0b;
-    --card: #111114;
-    --line: #1e1e22;
-    --line-2: #2a2a30;
-    --text: #f2efe9;
-    --muted: #a4a29c;
-    --accent: #e8763a;
-    --accent-2: #7fb3d5;
+    --bg: #fbf9f8;
+    --panel: #f4efee;
+    --rule: #e7dddc;
+    --ink: #3f4444;
+    --ink-dim: #5f5a5b;
+    --ink-mute: #8a8d8f;
+    --red: #862633;
+    --violet: #c964cf;
   }
-
   * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: 'Inter', system-ui, sans-serif;
-    color: var(--text);
-    background:
-      radial-gradient(circle at 12% 10%, rgba(232, 118, 58, 0.14), transparent 42%),
-      radial-gradient(circle at 84% 12%, rgba(127, 179, 213, 0.1), transparent 40%),
-      var(--bg);
-  }
-
-  .wrap {
-    width: min(1040px, calc(100% - 2rem));
-    margin: 1.4rem auto 2.5rem;
-  }
-
-  .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .brand {
-    text-decoration: none;
-    color: var(--text);
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.15rem;
-    letter-spacing: -0.01em;
-  }
-  .brand span { color: var(--accent); }
-
-  .back {
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    font-size: 0.9rem;
-  }
-
-  .back:hover {
-    color: var(--text);
-    border-color: var(--line-2);
-  }
-
-  h1, h2, h3 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin: 0;
-  }
-
-  h1 {
-    margin-top: 1.3rem;
-    font-size: clamp(1.9rem, 4vw, 3.1rem);
-    max-width: 16ch;
-    line-height: 1.05;
-  }
-
-  .lead {
-    margin-top: 0.9rem;
-    color: var(--muted);
-    max-width: 62ch;
-    line-height: 1.65;
-  }
-
-  .grid {
-    margin-top: 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .card {
-    background-color: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 1rem;
-    padding: 1.25rem;
-  }
-
-  .kicker {
-    margin: 0 0 0.55rem;
-    color: var(--accent);
-    font-size: 0.76rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  ul {
-    margin: 0;
-    padding-left: 1rem;
-    color: var(--muted);
-  }
-
-  li {
-    margin: 0.5rem 0;
-  }
-
-  .cta {
-    margin-top: 1.4rem;
-    padding: 1rem 1.25rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(232, 118, 58, 0.4);
-    background: linear-gradient(120deg, rgba(232, 118, 58, 0.12), rgba(127, 179, 213, 0.08));
-  }
-
-  .cta strong {
-    color: var(--accent);
-  }
-
-  @media (max-width: 860px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-  }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'PT Sans', 'Segoe UI', system-ui, sans-serif; font-size: 17px; line-height: 1.6; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 16px 28px 72px; }
+  @media (max-width: 480px) { .wrap { padding: 12px 20px 56px; } }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
+  .brand { display: block; margin-left: -12px; }
+  .brand img { display: block; width: 163px; height: auto; }
+  .back { color: var(--ink-dim); text-decoration: none; font-family: 'PT Sans Narrow', sans-serif; font-weight: 700; }
+  .back:hover { color: var(--red); }
+  :focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+  h1, h3 { font-family: 'PT Sans Narrow', 'Arial Narrow', sans-serif; font-weight: 700; margin: 0; }
+  h1 { margin-top: 56px; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 0.95; max-width: 16ch; }
+  h3 { font-size: 1.6rem; margin-bottom: 6px; }
+  .lead { margin-top: 20px; color: var(--ink-dim); max-width: 62ch; }
+  .grid { margin-top: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); padding: 24px 26px; border-radius: 4px; }
+    .kicker { margin: 0 0 10px; color: var(--red); font-size: 0.95rem; font-weight: 700; }
+  ul { margin: 0; padding: 0; list-style: none; color: var(--ink-dim); }
+  li { margin: 10px 0; padding-left: 18px; position: relative; }
+  li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 7px; height: 2px; background: var(--red); }
+  .cta { margin-top: 16px; padding: 28px 30px; background: #862633; color: #fff; }
+  .cta p { margin: 0; color: #f3cbd3; }
+  .cta h3 { color: #fff; }
+  .cta strong { color: #fff; }
 </style>
 </head>
 <body>
   <main class="wrap">
     <header class="top">
-      <a href="index.html" class="brand">Game<span>Figures</span></a>
+      <a href="index.html" class="brand" aria-label="GameFigures home"><img src="assets/vector/logo_orizzontale_postivie.svg" alt="GameFigures" width="163" height="52"></a>
       <a href="index.html" class="back">← Back to landing</a>
     </header>
 

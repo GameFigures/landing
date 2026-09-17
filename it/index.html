@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>GameFigures - Play it. Own it. Hold it.</title>
 <meta name="description" content="Relic by GameFigures: una statuetta da collezione con un videogioco completo dentro. Colleghi via USB e giochi subito. Nessuna installazione, nessun account, nessun DRM.">
+<meta name="theme-color" content="#862633">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gamefigures.tech/it/index.html">
 <meta property="og:title" content="GameFigures - Play it. Own it. Hold it.">
@@ -16,9 +17,11 @@
 <meta name="twitter:title" content="GameFigures - Play it. Own it. Hold it.">
 <meta name="twitter:description" content="Relic by GameFigures: una statuetta da collezione con un videogioco completo dentro. Colleghi via USB e giochi subito. Nessuna installazione, nessun account, nessun DRM.">
 <meta name="twitter:image" content="https://gamefigures.tech/assets/og-banner.png">
+<link rel="alternate" hreflang="en" href="https://gamefigures.tech/">
+<link rel="alternate" hreflang="it" href="https://gamefigures.tech/it/index.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <script>
@@ -33,7 +36,7 @@
 <body>
 
 <div class="boot-splash" id="boot-splash" aria-hidden="true">
-  <svg class="boot-splash-mark" viewBox="181 81 218 353" fill="currentColor"><path d="M 340,96 L 196,197 L 196,390 L 235,419 L 242,413 L 242,232 L 380,131 Z"/><path d="M 380,192 L 282,259 L 284,303 L 344,260 L 348,263 L 347,304 L 282,352 L 281,392 L 285,394 L 383,328 L 384,196 Z"/></svg>
+  <svg class="boot-splash-mark" viewBox="0 0 111 169"><path pathLength="1" d="M36.49 72.97L92.77 32.17L74.31 18.61L18.03 59.36V135.91L36.43 149.42Z"/><path pathLength="1" d="M51.89 138.31L92.77 108.67V54.51L51.9 84.21V103.37L76.67 85.49V102.48L51.89 120.53Z"/></svg>
   <div class="boot-splash-log">
     <span class="prompt">Relic // Boot</span>
     <span class="line">&gt; USB collegata</span>
@@ -51,15 +54,15 @@
       sessionStorage.setItem('gf-booted', '1');
     } catch (e) {}
     splash.addEventListener('click', function () { splash.remove(); });
-    setTimeout(function () { if (splash) splash.remove(); }, 3000);
+    setTimeout(function () { if (splash) splash.remove(); }, 2900);
   })();
 </script>
 
 <nav class="site-nav">
   <div class="wrap">
-    <a href="index.html" class="brand">
-      <svg class="brand-mark" viewBox="181 81 218 353" fill="currentColor" aria-hidden="true"><path d="M 340,96 L 196,197 L 196,390 L 235,419 L 242,413 L 242,232 L 380,131 Z"/><path d="M 380,192 L 282,259 L 284,303 L 344,260 L 348,263 L 347,304 L 282,352 L 281,392 L 285,394 L 383,328 L 384,196 Z"/></svg>
-      Game<span>Figures</span>
+    <a href="index.html" class="brand" aria-label="GameFigures, pagina iniziale">
+      <img class="logo-pos" src="../assets/vector/logo_orizzontale_postivie.svg" alt="GameFigures" width="163" height="52">
+      <img class="logo-neg" src="../assets/vector/logo_orizzontale_negative.svg" alt="GameFigures" width="163" height="52">
     </a>
     <div class="nav-links">
       <a href="#relic">Relic</a>
@@ -72,111 +75,122 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
-      <a href="../index.html" class="lang-btn" aria-label="Switch to English">EN</a>
+      <a href="../index.html" class="lang-btn" hreflang="en" aria-label="Switch to English">EN</a>
       <a href="mailto:info@gamefigures.tech" class="nav-cta">Contattaci</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <svg class="hero-watermark" viewBox="181 81 218 353" fill="currentColor" aria-hidden="true"><path d="M 340,96 L 196,197 L 196,390 L 235,419 L 242,413 L 242,232 L 380,131 Z"/><path d="M 380,192 L 282,259 L 284,303 L 344,260 L 348,263 L 347,304 L 282,352 L 281,392 L 285,394 L 383,328 L 384,196 Z"/></svg>
-  <div class="wrap">
-    <div class="hero-inner">
-      <span class="file-no">Edizione fondatori &middot; Numerata singolarmente</span>
-      <h1>L'action figure che avvia un gioco completo<em>,</em> e che possiedi davvero.</h1>
-      <p class="lede">Relic è un'edizione fisica per chi vuole più di una licenza digitale: una statuetta in resina numerata, rifinita a mano, con il gioco completo sigillato nella base. Collega via USB e giochi in pochi secondi. Nessuna installazione, nessun account, nessun DRM. Nessuno può portartelo via.</p>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="kicker">Serie fondatori &middot; ogni pezzo è numerato</span>
+      <h1>Una statuetta con dentro il gioco completo.</h1>
+      <p class="lede">Relic è una piccola figura in resina, rifinita a mano e numerata. Il gioco completo è salvato nella base: la colleghi al computer con un cavo USB e parte. Non ci sono store o account di mezzo, quindi nessuno può riprendertelo.</p>
       <div class="cta-row">
-        <a href="#come-funziona" class="btn btn-primary">Come funziona</a>
-        <a href="studios.html" class="btn btn-ghost">Per studi</a>
+        <a href="#come-funziona" class="btn btn-primary">Guarda come funziona <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a href="studios.html" class="btn btn-ghost">Per gli studi</a>
       </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="construct construct-photo" viewBox="0 0 111 169" aria-hidden="true">
+      <defs>
+        <clipPath id="gf-planes"><path d="M36.49 72.97L92.77 32.17L74.31 18.61L18.03 59.36V135.91L36.43 149.42Z"/><path d="M51.89 138.31L92.77 108.67V54.51L51.9 84.21V103.37L76.67 85.49V102.48L51.89 120.53Z"/></clipPath>
+        <filter id="gf-duo-light" color-interpolation-filters="sRGB">
+          <feColorMatrix type="saturate" values="0"/>
+          <feComponentTransfer><feFuncR type="table" tableValues="0.66 0.965"/><feFuncG type="table" tableValues="0.36 0.94"/><feFuncB type="table" tableValues="0.4 0.94"/></feComponentTransfer>
+        </filter>
+        <filter id="gf-duo-dark" color-interpolation-filters="sRGB">
+          <feColorMatrix type="saturate" values="0"/>
+          <feComponentTransfer><feFuncR type="table" tableValues="0.13 0.56"/><feFuncG type="table" tableValues="0.11 0.3"/><feFuncB type="table" tableValues="0.12 0.34"/></feComponentTransfer>
+        </filter>
+      </defs>
+      <path class="c-grid" d="M18.03 -70V240M36.49 -70V240M51.89 -70V240M76.67 -70V240M92.77 -70V240M-80 130.4L190 -65.3M-80 157.4L190 -38.3M-80 233.9L190 38.2M-80 179.8L190 -15.9M-80 -94.8L190 103.6M-80 63.9L190 262.3M-80 6.4L190 204.9"/>
+      <g transform="translate(9.2 6.8)">
+        <path class="c-plane" d="M36.49 72.97L92.77 32.17L74.31 18.61L18.03 59.36V135.91L36.43 149.42Z"/><path class="c-plane" d="M51.89 138.31L92.77 108.67V54.51L51.9 84.21V103.37L76.67 85.49V102.48L51.89 120.53Z"/>
+        <g class="c-photo" clip-path="url(#gf-planes)"><image href="../assets/statue.png" x="4" y="10" width="112" height="122.5" preserveAspectRatio="xMidYMid slice"/></g>
+      </g>
+      <path class="c-line" pathLength="1" d="M36.49 72.97L92.77 32.17L74.31 18.61L18.03 59.36V135.91L36.43 149.42Z"/>
+      <path class="c-line late" pathLength="1" d="M51.89 138.31L92.77 108.67V54.51L51.9 84.21V103.37L76.67 85.49V102.48L51.89 120.53Z"/>
+    </svg>
+      <p class="construct-note">Dentro il marchio: un render di prova di un Relic, generato con IA.</p>
     </div>
   </div>
 </header>
 
 <section id="come-funziona">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Come funziona</div>
-      <h2>Apri. Collega. Gioca.</h2>
+    <div class="intro">
+      <span class="kicker">Come funziona</span>
+      <h2>Dalla scatola al gioco.</h2>
     </div>
-    <div class="console">
-      <div class="console-bar"><span></span><span></span><span></span></div>
-      <ol class="console-log">
-        <li>
-          <span class="tag">01</span>
-          <div>
-            <h3>Apri la scatola</h3>
-            <p>Ogni pezzo arriva numerato, con il suo cavo e un breve certificato della serie.</p>
-          </div>
-        </li>
-        <li>
-          <span class="tag">02</span>
-          <div>
-            <h3>Collega via USB</h3>
-            <p>Inserisci la base nel tuo sistema. Viene riconosciuta all'istante: nessun driver, nessuna configurazione.</p>
-          </div>
-        </li>
-        <li>
-          <span class="tag">03</span>
-          <div>
-            <h3>Gioca subito</h3>
-            <p>L'app integrata avvia il gioco in pochi secondi. I progressi restano sul chip.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
+    <ol class="steps">
+      <li>
+        <span class="num">Passo 1</span>
+        <h3>Apri la scatola</h3>
+        <p>Ogni pezzo arriva con il suo numero, un cavo USB e un breve certificato della serie.</p>
+      </li>
+      <li>
+        <span class="num">Passo 2</span>
+        <h3>Collega la base</h3>
+        <p>Il computer la riconosce subito. Non ci sono driver da installare né niente da configurare.</p>
+      </li>
+      <li>
+        <span class="num">Passo 3</span>
+        <h3>Gioca</h3>
+        <p>Il gioco parte dalla statuetta in pochi secondi, e anche i salvataggi restano lì.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <section id="relic">
-  <div class="wrap">
-  <div class="what-grid">
-    <div class="what-copy">
-      <div class="eyebrow">Che cos'è Relic</div>
-      <h2>Una statua. Una memoria. Un gioco completo.</h2>
-      <p class="what-lede">Resina stampata SLA, dieci centimetri, tema legato al titolo che contiene, rifinita a mano. Pezzi rifiniti a mano comportano piccole variazioni da esemplare a esemplare: non è un difetto, è la norma. Nella base, una memoria flash USB con l'intero gioco. Collegala e giochi.</p>
+  <div class="wrap what-grid">
+    <div>
+      <span class="kicker">Che cos'è Relic</span>
+      <h2>Fatta per stare sullo scaffale, e per giocarci.</h2>
+      <p class="what-lede">Ogni figura è alta circa dieci centimetri, stampata in resina SLA e rifinita a mano, quindi piccole differenze tra un pezzo e l'altro sono normali. Il soggetto viene dal gioco che contiene. Nella base c'è una memoria flash USB con il gioco completo.</p>
       <div class="what-list">
-        <div class="item">
-          <div class="tick"></div>
-          <div>
-            <h3>Nessuna installazione richiesta</h3>
-            <p>L'app parte dalla statua stessa. Se preferisci copiare tutto sul disco, i file sono lì, in chiaro.</p>
-          </div>
+        <div>
+          <h3>Niente da installare</h3>
+          <p>Il gioco parte direttamente dalla statuetta. Se preferisci tenerne una copia sul disco, i file sono lì e puoi copiarli.</p>
         </div>
-        <div class="item">
-          <div class="tick"></div>
-          <div>
-            <h3>Il gioco è tuo</h3>
-            <p>Nessun account, nessun server, niente tra te e quello che hai comprato. Vendilo, prestalo, tienilo per sempre.</p>
-          </div>
+        <div>
+          <h3>È davvero tuo</h3>
+          <p>Tra te e il gioco non ci sono account né server. Puoi prestarlo, venderlo o tenerlo finché vuoi.</p>
         </div>
-        <div class="item">
-          <div class="tick"></div>
-          <div>
-            <h3>Preservazione reale</h3>
-            <p>I file di gioco sono sempre visibili e copiabili. Nessuno store recintato, nessun intermediario a decidere cosa resta.</p>
-          </div>
+        <div>
+          <h3>Il gioco resta</h3>
+          <p>I file restano leggibili e copiabili, quindi per giocarci non dipendi da uno store che resti online.</p>
         </div>
       </div>
     </div>
-    <div class="what-visual">
-      <img src="../assets/statue.png" alt="La statua Relic, una statuetta in resina stampata SLA con una memoria flash USB nella base" loading="lazy">
-      <p class="img-caption">Render generato con IA: foto del reperto reale in arrivo</p>
-    </div>
-  </div>
+    <aside class="label-card" aria-label="Scheda di Relic">
+      <img class="lm logo-pos" src="../assets/vector/logo_lettermark_positive.svg" alt="" width="75" height="114">
+      <img class="lm logo-neg" src="../assets/vector/logo_lettermark_negative.svg" alt="" width="75" height="114">
+      <h3>Relic</h3>
+      <p class="sub">Edizione fisica di un videogioco</p>
+      <dl>
+        <div><dt>Altezza</dt><dd>~10 cm</dd></div>
+        <div><dt>Materiale</dt><dd>Resina SLA</dd></div>
+        <div><dt>Finitura</dt><dd>A mano</dd></div>
+        <div><dt>Connessione</dt><dd>USB, nella base</dd></div>
+        <div><dt>Tiratura</dt><dd>Numerata, serie limitate</dd></div>
+      </dl>
+    </aside>
   </div>
 </section>
 
 <section id="app">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Due livelli di app</div>
-      <h2>Leggera dentro la statua. Completa sul sistema.</h2>
+    <div class="intro">
+      <span class="kicker">Due app</span>
+      <h2>Un'app leggera nella statuetta, una completa sul computer.</h2>
       <p>Non serve installare niente per giocare. Quando ne hai più di uno, un'app companion tiene ordine nella collezione.</p>
     </div>
     <div class="apps-grid">
-      <div class="app ember">
-        <div class="app-badge">Embedded &middot; nel Relic</div>
+      <div class="app">
+        <div class="app-badge">Dentro il Relic</div>
         <h3>Ember</h3>
         <p>App leggera che vive nella partizione Flux. Si avvia direttamente dalla statua, senza installazione. Gestisce autenticazione, mount di Core, launcher, DLC.</p>
         <ul>
@@ -185,8 +199,8 @@
           <li>Nessuna installazione</li>
         </ul>
       </div>
-      <div class="app forge">
-        <div class="app-badge">Companion &middot; sul sistema</div>
+      <div class="app">
+        <div class="app-badge">Sul tuo computer</div>
         <h3>Forge</h3>
         <p>App completa installabile su desktop. Gestisce l'intera collezione: libreria dei tuoi Relic, DLC, aggiornamenti firmati.</p>
         <ul>
@@ -201,95 +215,47 @@
 </section>
 
 <section id="filosofia" class="quote">
+  <svg class="construct quote-art" viewBox="0 0 111 169" aria-hidden="true">
+      <g transform="translate(9.2 6.8)"><path class="c-plane" d="M36.49 72.97L92.77 32.17L74.31 18.61L18.03 59.36V135.91L36.43 149.42Z"/><path class="c-plane" d="M51.89 138.31L92.77 108.67V54.51L51.9 84.21V103.37L76.67 85.49V102.48L51.89 120.53Z"/></g>
+      <path class="c-line" pathLength="1" d="M36.49 72.97L92.77 32.17L74.31 18.61L18.03 59.36V135.91L36.43 149.42Z"/>
+      <path class="c-line late" pathLength="1" d="M51.89 138.31L92.77 108.67V54.51L51.9 84.21V103.37L76.67 85.49V102.48L51.89 120.53Z"/>
+    </svg>
   <div class="wrap">
-    <div class="quote-panel">
-      <div class="eyebrow">Deposizione</div>
-      <blockquote>
-        Se sparissimo domani, il tuo Relic <em>continuerebbe a funzionare.</em>
-      </blockquote>
-      <div class="attr">Il nostro impegno per la preservazione</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Specifiche</div>
-      <h2>Compatta e solida.</h2>
-    </div>
-    <div class="specs">
-      <div class="spec">
-        <div class="k">Dimensione</div>
-        <div class="v">~10 cm</div>
-        <div class="sub">Resina SLA</div>
-      </div>
-      <div class="spec">
-        <div class="k">Connessione</div>
-        <div class="v">USB</div>
-        <div class="sub">Nella base</div>
-      </div>
-      <div class="spec">
-        <div class="k">Tiratura</div>
-        <div class="v">Numerata</div>
-        <div class="sub">Serie limitate</div>
-      </div>
-    </div>
+    <blockquote>Se chiudessimo domani, il tuo Relic <em>continuerebbe a funzionare.</em></blockquote>
+    <p class="attr">È la promessa su cui si regge tutto il resto: il gioco vive nell'oggetto, non sui nostri server.</p>
   </div>
 </section>
 
 <section id="founder" class="final">
+  <svg class="construct final-art" viewBox="0 0 111 169" aria-hidden="true">
+      <g transform="translate(9.2 6.8)"><path class="c-plane" d="M36.49 72.97L92.77 32.17L74.31 18.61L18.03 59.36V135.91L36.43 149.42Z"/><path class="c-plane" d="M51.89 138.31L92.77 108.67V54.51L51.9 84.21V103.37L76.67 85.49V102.48L51.89 120.53Z"/></g>
+      <path class="c-line" pathLength="1" d="M36.49 72.97L92.77 32.17L74.31 18.61L18.03 59.36V135.91L36.43 149.42Z"/>
+      <path class="c-line late" pathLength="1" d="M51.89 138.31L92.77 108.67V54.51L51.9 84.21V103.37L76.67 85.49V102.48L51.89 120.53Z"/>
+    </svg>
   <div class="wrap">
-    <div class="eyebrow">Founder edition</div>
-    <h2>Vuoi essere tra i primi?</h2>
-    <p>La prima serie è limitata. Scrivici per i dettagli.</p>
-    <a href="mailto:info@gamefigures.tech" class="btn btn-primary" style="padding:16px 30px;font-size:1rem">Contattaci</a>
+    <span class="kicker">Founder edition</span>
+    <h2>La prima serie è piccola.</h2>
+    <p>Stiamo preparando una prima tiratura limitata. Se ne vuoi una, o hai delle domande, scrivici.</p>
+    <a href="mailto:info@gamefigures.tech" class="btn btn-primary">Scrivici <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    <span class="mail">Oppure manda una mail a <a href="mailto:info@gamefigures.tech">info@gamefigures.tech</a></span>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="wrap">
-    <div>&copy; 2026 GameFigures &middot; Made in Italy</div>
+    <a href="index.html" class="footer-logo" aria-label="GameFigures, pagina iniziale">
+      <img class="logo-pos" src="../assets/vector/logo_orizzontale_payoff.svg" alt="GameFigures - Play it. Own it. Hold it." width="230" height="74" loading="lazy">
+      <img class="logo-neg" src="../assets/brand/logo_orizzontale_payoff_negative.svg" alt="GameFigures - Play it. Own it. Hold it." width="230" height="74" loading="lazy">
+    </a>
+    <div class="footer-meta">
+      <div>&copy; 2026 GameFigures &middot; Made in Italy</div>
+      <div>Relic &middot; Core &middot; Flux &middot; Drift &middot; Ember &middot; Forge</div>
+    </div>
     <div class="footer-note">L'immagine della statuetta è un placeholder generato con IA, usato in attesa di avere foto di prototipi reali.</div>
   </div>
 </footer>
 
-<script>
-  (function () {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      var current = document.documentElement.getAttribute('data-theme') || 'dark';
-      var next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('gf-theme', next); } catch (e) {}
-    });
-  })();
-</script>
-
-<script>
-  (function () {
-    var hero = document.querySelector('.hero');
-    var mark = document.querySelector('.hero-watermark');
-    if (!hero || !mark) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-    var raf = null;
-    hero.addEventListener('mousemove', function (e) {
-      var r = hero.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - 0.5;
-      var y = (e.clientY - r.top) / r.height - 0.5;
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(function () {
-        mark.style.transform = 'rotate(9deg) translate(' + (x * -22) + 'px,' + (y * -16) + 'px)';
-      });
-    });
-    hero.addEventListener('mouseleave', function () {
-      if (raf) cancelAnimationFrame(raf);
-      mark.style.transform = 'rotate(9deg)';
-    });
-  })();
-</script>
+<script src="../site.js" defer></script>
 
 </body>
 </html>
