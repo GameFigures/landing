@@ -33,7 +33,7 @@
   --mono: 'PT Mono', ui-monospace, 'Cascadia Mono', monospace;
 }
 
-:root[data-theme="dark"] {
+:root:not([data-theme="light"]) {
   --bg: #1e1b1c;
   --paper: #262223;
   --panel: #282324;
@@ -56,8 +56,8 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { color-scheme: light; scroll-behavior: smooth; }
-html[data-theme="dark"] { color-scheme: dark; }
+html { color-scheme: dark; scroll-behavior: smooth; }
+html[data-theme="light"] { color-scheme: light; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
@@ -93,11 +93,11 @@ code {
 /* A plain sentence-case note in brand red: says what a block is about. */
 .kicker { display: block; margin-bottom: 14px; font-weight: 700; font-size: 0.95rem; color: var(--red); }
 
-/* ================= logo swaps ================= */
-.logo-pos { display: block; }
-.logo-neg { display: none; }
-html[data-theme="dark"] .logo-pos { display: none; }
-html[data-theme="dark"] .logo-neg { display: block; }
+/* ================= logo swaps (dark is the default theme) ================= */
+.logo-pos { display: none; }
+.logo-neg { display: block; }
+html[data-theme="light"] .logo-pos { display: block; }
+html[data-theme="light"] .logo-neg { display: none; }
 
 /* ================= nav ================= */
 nav.site-nav {
@@ -139,9 +139,9 @@ nav.site-nav .wrap {
 .icon-btn svg { width: 16px; height: 16px; }
 .lang-btn { padding: 0 12px; }
 .icon-btn:hover, .lang-btn:hover { color: var(--red); border-color: var(--red); }
-.icon-btn .icon-sun { display: none; }
-html[data-theme="dark"] .icon-btn .icon-sun { display: block; }
-html[data-theme="dark"] .icon-btn .icon-moon { display: none; }
+.icon-btn .icon-moon { display: none; }
+html[data-theme="light"] .icon-btn .icon-moon { display: block; }
+html[data-theme="light"] .icon-btn .icon-sun { display: none; }
 
 .nav-cta {
   height: 36px; display: inline-flex; align-items: center; padding: 0 16px; margin-left: 4px;
