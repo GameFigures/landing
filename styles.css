@@ -21,6 +21,10 @@
   --red-soft: rgba(134, 38, 51, 0.08);
   --violet: #c964cf;       /* Aesthetic Violet */
   --on-red: #ffffff;
+  --fill: #862633;         /* filled buttons and labels */
+  --on-fill: #ffffff;
+  --code: #862633;
+  --code-soft: rgba(134, 38, 51, 0.08);
   --band: #862633;
   --band-plane: #93303e;
   --band-line: #b04b59;
@@ -47,6 +51,12 @@
   --red-hover: #df7a8e;
   --red-soft: rgba(210, 91, 115, 0.12);
   --on-red: #1e1b1c;
+  /* White labels on a slightly deeper Punch: 5.3:1 instead of 3.8:1 on Punch itself. */
+  --fill: #b8405a;
+  --on-fill: #ffffff;
+  /* Code strings take the secondary brand colour on dark: 5:1 on the page ground. */
+  --code: #c964cf;
+  --code-soft: rgba(201, 100, 207, 0.14);
   --band: #5c1a24;
   --band-plane: #6a222d;
   --band-line: #8c3a47;
@@ -70,7 +80,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-::selection { background: var(--red); color: var(--on-red); }
+::selection { background: var(--fill); color: var(--on-fill); }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; }
 :focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
@@ -83,7 +93,7 @@ h3 { font-size: 1.5rem; line-height: 1.15; }
 
 code {
   font-family: var(--mono); font-size: 0.82em;
-  color: var(--red); background: var(--red-soft);
+  color: var(--code); background: var(--code-soft);
   padding: 1px 5px; border-radius: 3px;
 }
 
@@ -146,7 +156,7 @@ html[data-theme="light"] .icon-btn .icon-sun { display: none; }
 .nav-cta {
   height: 36px; display: inline-flex; align-items: center; padding: 0 16px; margin-left: 4px;
   border-radius: 18px; font-weight: 700; font-size: 0.9rem; white-space: nowrap;
-  background: var(--red); color: var(--on-red); transition: background 0.2s;
+  background: var(--fill); color: var(--on-fill); transition: background 0.2s;
 }
 .nav-cta:hover { background: var(--red-hover); }
 @media (max-width: 600px) { .nav-cta { display: none; } }
@@ -159,7 +169,7 @@ html[data-theme="light"] .icon-btn .icon-sun { display: none; }
   border: 2px solid transparent; cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.btn-primary { background: var(--red); color: var(--on-red); }
+.btn-primary { background: var(--fill); color: var(--on-fill); }
 .btn-primary:hover { background: var(--red-hover); }
 .btn-primary .arrow { transition: transform 0.2s; }
 .btn-primary:hover .arrow { transform: translateX(3px); }
@@ -320,7 +330,7 @@ section.compact p + p { margin-top: 14px; }
 .flip-front img { display: block; width: 100%; height: auto; border-radius: 6px 6px 0 0; }
 .ai-band {
   padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
-  background: var(--red); color: var(--on-red); font-size: 0.8rem; line-height: 1.35;
+  background: var(--fill); color: var(--on-fill); font-size: 0.8rem; line-height: 1.35;
 }
 .ai-band strong { display: block; font-size: 0.92rem; }
 .flip-back.label-card { padding-bottom: 48px; }
